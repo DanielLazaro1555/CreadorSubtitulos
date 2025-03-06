@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Subtítulos (.srt)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.css">
+<script src="https://cdn.jsdelivr.net/npm/plyr@3.7.8/dist/plyr.min.js"></script>
+
+</head>
+<body class="bg-gray-100 text-gray-900 p-6">
+    <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+        <h1 class="text-2xl font-bold mb-4">Generador de Subtítulos (.srt)</h1>
+        
+        <!-- Reproductor de video/audio -->
+        <video id="video" controls class="w-full rounded-lg shadow"></video>
+
+        
+        <!-- Botón para cargar archivo de video/audio -->
+        <input type="file" id="fileInput" accept="video/*,audio/*" class="mb-4 block w-full border p-2 rounded-lg">
+        
+        <!-- Tabla para subtítulos -->
+        <div class="overflow-x-auto">
+            <table class="w-full border-collapse border border-gray-300">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="border p-2">Inicio</th>
+                        <th class="border p-2">Fin</th>
+                        <th class="border p-2">Texto</th>
+                        <th class="border p-2">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="subtitlesList"></tbody>
+            </table>
+        </div>
+        
+        <!-- Botón para agregar subtítulo -->
+        <button id="addSubtitle" class="mt-4 bg-blue-500 text-white px-4 py-2 rounded-lg">Agregar Subtítulo</button>
+        
+        <!-- Botón para exportar archivo .srt -->
+        <button id="exportSrt" class="mt-4 ml-2 bg-green-500 text-white px-4 py-2 rounded-lg">Exportar .srt</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
